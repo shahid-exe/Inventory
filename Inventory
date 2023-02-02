@@ -1,0 +1,144 @@
+#include<stdio.h>
+int
+main ()
+{
+  int a, r1 = 1, r2 = 1, r3 = 1, r4 = 1, app, ora, ban, pin;
+  int a1, a2, a3, a4, b1, b2, b3, b4, a11, a22, a33, a44;
+shop:
+  printf
+    ("\n\nEnter the fruit data you want to see : \n Press '1' for Apple\nPress '2' for Orange\nPress '3' for Banana\nPress '4' for Pineapple\n : ");
+  scanf ("%d", &a);
+
+  if (a == 1)
+    {
+      printf
+	("\nName of the fruit : Apple\nTotal Quantity in KG Available : 10kg\nQuantity sold : 2kg\nQuantity left : 8kg\nDo you want to buy this Fruit ? Press '1' for yes and '0' for no : ");
+      scanf ("%d", &a1);
+      if (a1 == 1)
+	{
+	  printf ("\nEnter the quantity : ");
+	  scanf ("%d", &app);
+	  if (app <= 8)
+	    {
+	      r1 = app * 70;
+	      printf
+		("\nQuantity demanded : %d\nPrice per kg : 70 Rs.\nPrice to be paid : %d\nQuantity left : %d",
+		 app, r1, 8 - app);
+	      printf
+		("\nDo you want to continue to shop after this purchase? Press '1' for yes and '0' for no");
+	      scanf ("%d", &a11);
+	      if (a11 == 1)
+		{
+		  printf ("\nChoose your option below\n");
+		  goto shop;
+		}
+	      else if (a11 == 0)
+		{
+		  printf ("\nThank you for purchasing");
+		}
+	    }
+	  else
+	    {
+	      printf ("\nQuantity demanded more than available quantity");
+	      goto shop;
+	    }
+	}
+
+      else if (a1 == 0)
+	{
+	  printf ("\nLet's move to the next product");
+	  goto shop;
+	}
+    }
+  else if (a == 2)
+    {
+      printf
+	("\nName of the fruit : Orange\nTotal Quantity in KG Available : 10kg\nQuantity sold : 2kg\nQuantity left : 8kg\nDo you want to buy this Fruit ? Press '1' for yes and '0' for no : ");
+      scanf ("%d", &a2);
+      if (a2 == 1)
+	{
+	  printf ("\nEnter the quantity : ");
+	  scanf ("%d", &ora);
+	  if (ora <= 8)
+	    {
+	      r2 = ora * 50;
+	      printf
+		("\nQuantity demanded : %d\nPrice per kg : 50 Rs.\nPrice to be paid : %d kg\nQuantity left : %d",
+		 app, r2, 8 - ora);
+	    }
+	  else
+	    {
+	      printf ("\nQuantity demanded more than available quantity");
+	      goto shop;
+	    }
+
+	}
+      else if (a2 == 0)
+	{
+	  printf ("\nLet's move to the next product");
+	  goto shop;
+	}
+
+    }
+  else if (a == 3)
+    {
+      printf
+	("\nName of the fruit : Banana\nTotal Quantity in KG Available : 10kg\nQuantity sold : 4kg\nQuantity left : 6kg\nDo you want to buy this Fruit ? Press '1' for yes and '0' for no : ");
+      scanf ("%d", &a3);
+      if (a3 == 1)
+	{
+	  printf ("\nEnter the quantity : ");
+	  scanf ("%d", &ban);
+	  if (ban <= 6)
+	    {
+	      r3 = ban * 55;
+	      printf
+		("\nQuantity demanded : %d\nPrice per kg : 55 Rs.\nPrice to be paid : %d \nQuantity left : %d kg",
+		 ban, r3, 6 - ban);
+	    }
+	  else
+	    {
+	      printf ("\nQuantity demanded more than available quantity");
+	      goto shop;
+	    }
+	}
+      else if (a3 == 0)
+	{
+	  printf ("\nLet's move to the next product");
+	  goto shop;
+	}
+    }
+  else if (a == 4)
+    {
+      printf
+	("\nName of the fruit : Pineapple\nTotal Quantity in KG Available : 10kg\nQuantity sold : 3kg\nQuantity left : 7kg\nDo you want to buy this Fruit ? Press '1' for yes and '0' for no : ");
+      scanf ("%d", &a4);
+      if (a4 == 1)
+	{
+	  printf ("\nEnter the quantity : ");
+	  scanf ("%d", &pin);
+	  if (pin <= 7)
+	    {
+	      r3 = pin * 30;
+	      printf
+		("\nQuantity demanded : %d\nPrice per kg : 30 Rs.\nPrice to be paid : %d \nQuantity left : %d kg",
+		 pin, r3, 7 - pin);
+	    }
+	  else
+	    {
+	      printf ("\nQuantity demanded more than available quantity");
+	      goto shop;
+	    }
+	}
+      else if (a4 == 0)
+	{
+	  printf ("\nLet's move to the next product");
+	  goto shop;
+	}
+    }
+  else
+    {
+      printf ("Invalid number");
+    }
+}
+
